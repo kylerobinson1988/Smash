@@ -8,11 +8,11 @@
 
 import UIKit
 
-class BallCountView: UIView {
+@IBDesignable class BallCountView: UIView {
     
     
    
-    var ballsLeft = 3 {
+    @IBInspectable var ballsLeft: Int = 3 {
         
         didSet {
             
@@ -20,7 +20,7 @@ class BallCountView: UIView {
         }
     }
     
-    
+    @IBInspectable var padding: CGFloat = 10
 
     
     override func drawRect(rect: CGRect) {
@@ -28,22 +28,41 @@ class BallCountView: UIView {
         backgroundColor = UIColor.clearColor()
         var context = UIGraphicsGetCurrentContext()
         
-        let balls = ballsLeft
-        let padding: CGFloat = 25
+        let height = rect.height
+        let width = rect.height
         
         for i in 0..<ballsLeft {
             
-            var countBallWidth: CGFloat = CGFloat(i) * padding
+            let x = CGFloat(i) * (width + padding)
+            let y: CGFloat = 0
             
-            // x, y, width, height
-            var countBall = UIView(frame: CGRectMake(countBallWidth, 0, 20, 20))
+            UIColor.whiteColor().set()
+
             
-//            countBall.center = CGPointMake(10, 10)
-            countBall.backgroundColor = UIColor.whiteColor()
-            countBall.layer.cornerRadius = 10
-            addSubview(countBall)
+            CGContextFillEllipseInRect(context, CGRectMake(x, y, width, height))
+            
             
         }
+        
+        //// My code below.
+        
+        
+//        let balls = ballsLeft
+//        let padding: CGFloat = 25
+//        
+//        for i in 0..<ballsLeft {
+//            
+//            var countBallWidth: CGFloat = CGFloat(i) * padding
+//            
+//            // x, y, width, height
+//            var countBall = UIView(frame: CGRectMake(countBallWidth, 0, 20, 20))
+//            
+////            countBall.center = CGPointMake(10, 10)
+//            countBall.backgroundColor = UIColor.whiteColor()
+//            countBall.layer.cornerRadius = 10
+//            addSubview(countBall)
+//            
+//        }
     
     }
 

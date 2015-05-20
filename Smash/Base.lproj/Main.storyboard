@@ -20,25 +20,55 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thG-Tv-UBc">
                                 <rect key="frame" x="0.0" y="0.0" width="700" height="40"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="High Score: 00000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-P2-0o7">
-                                        <rect key="frame" x="134" y="10" width="203" height="25"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-vB-MN2" customClass="BallCountView" customModule="Smash" customModuleProvider="target">
+                                        <rect key="frame" x="14" y="12" width="115" height="16"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="16" id="aPb-Ov-eWu"/>
+                                            <constraint firstAttribute="width" constant="115" id="cTx-ja-ofN"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ballsLeft">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="padding">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 00000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-LZ-wxo">
+                                        <rect key="frame" x="551" y="7" width="110" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="110" id="Lno-gv-xzU"/>
+                                            <constraint firstAttribute="height" constant="25" id="veN-Tj-Wsy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qui-vB-MN2" customClass="BallCountView" customModule="Smash" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="10" width="80" height="20"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Score: 00000000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcd-LZ-wxo">
-                                        <rect key="frame" x="376" y="10" width="146" height="25"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 00000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jm-P2-0o7">
+                                        <rect key="frame" x="124" y="7" width="165" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="fcv-fT-lIp"/>
+                                            <constraint firstAttribute="width" constant="165" id="pJS-Mh-mQr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="fcd-LZ-wxo" firstAttribute="top" secondItem="thG-Tv-UBc" secondAttribute="top" constant="7" id="57I-RJ-OBa"/>
+                                    <constraint firstAttribute="bottom" secondItem="fcd-LZ-wxo" secondAttribute="bottom" constant="8" id="6m7-3t-7Hz"/>
+                                    <constraint firstItem="fcd-LZ-wxo" firstAttribute="leading" secondItem="Qui-vB-MN2" secondAttribute="trailing" constant="422" id="9kE-yT-H9B"/>
+                                    <constraint firstItem="1Jm-P2-0o7" firstAttribute="top" secondItem="thG-Tv-UBc" secondAttribute="top" constant="7" id="DPp-Yh-Wbd"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qui-vB-MN2" secondAttribute="bottom" constant="12" id="M9Q-7K-Wkk"/>
+                                    <constraint firstItem="Qui-vB-MN2" firstAttribute="leading" secondItem="thG-Tv-UBc" secondAttribute="leading" constant="14" id="Xim-d9-6Ad"/>
+                                    <constraint firstItem="Qui-vB-MN2" firstAttribute="top" secondItem="thG-Tv-UBc" secondAttribute="top" constant="12" id="eBv-Ju-0jX"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Jm-P2-0o7" secondAttribute="bottom" constant="8" id="esd-fs-slB"/>
+                                    <constraint firstItem="1Jm-P2-0o7" firstAttribute="leading" secondItem="thG-Tv-UBc" secondAttribute="leading" constant="124" id="gE7-Au-p81"/>
+                                    <constraint firstAttribute="trailing" secondItem="fcd-LZ-wxo" secondAttribute="trailing" constant="39" id="wDI-B0-91F"/>
                                     <constraint firstAttribute="height" constant="40" id="wub-UR-ZEq"/>
                                 </constraints>
                             </view>
@@ -61,11 +91,11 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="700" height="400"/>
                     <connections>
-                        <outlet property="ballsLeft" destination="Qui-vB-MN2" id="Nbg-Ba-6Yy"/>
-                        <outlet property="currentScore" destination="fcd-LZ-wxo" id="3ed-x0-qcc"/>
+                        <outlet property="currentScoreLabel" destination="fcd-LZ-wxo" id="oK6-De-LQA"/>
                         <outlet property="gameView" destination="Ib7-lD-8L8" id="oka-n1-8W5"/>
                         <outlet property="headerView" destination="thG-Tv-UBc" id="dyU-L3-pkf"/>
-                        <outlet property="highScore" destination="1Jm-P2-0o7" id="Zzi-RV-uYc"/>
+                        <outlet property="livesView" destination="Qui-vB-MN2" id="Gqd-fB-wOC"/>
+                        <outlet property="topScoreLabel" destination="1Jm-P2-0o7" id="jdq-ca-rVW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

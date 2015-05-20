@@ -12,9 +12,9 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var gameView: UIImageView!
-    @IBOutlet weak var ballsLeft: UIView!
-    @IBOutlet weak var highScore: UILabel!
-    @IBOutlet weak var currentScore: UILabel!
+    @IBOutlet weak var livesView: BallCountView!
+    @IBOutlet weak var topScoreLabel: UILabel!
+    @IBOutlet weak var currentScoreLabel: UILabel!
     
     
     
@@ -24,7 +24,39 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     var ballBehavior = UIDynamicItemBehavior()
     var brickBehavior = UIDynamicItemBehavior()
     var paddleBehavior = UIDynamicItemBehavior()
-    var runningScore = 0
+    var currentScore: Int = 0 {
+        
+        didSet {
+            
+            currentScoreLabel.text = "Score: \(currentScore)"
+            
+            if currentScore > topScore {
+                
+                topScore = currentScore
+                
+            }
+            
+        }
+    }
+    
+    var topScore: Int {
+        
+        get {
+            
+            return NSUserDefaults.standardUserDefaults().integerForKey("topScore")
+            
+            
+        }
+        
+        set {
+            
+            NSUserDefaults.standardUserDefaults().setInteger(newValue, forKey: "topScore")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            
+            topScoreLabel.text = "\(newValue)"
+            
+        }
+    }
     
     var balls: [UIView] = []
     var bricks: [UIView] = []
@@ -33,9 +65,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-       ballsLeft.setNeedsDisplay()
+       livesView.setNeedsDisplay()
         
         ////////////////
+        
+        topScoreLabel.text = "\(topScore)"
     
         animator = UIDynamicAnimator(referenceView: gameView)
         
@@ -92,12 +126,11 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                 collisionBehavior.removeItem(brick)
                 
                 var scoreLabel = UILabel(frame: brick.frame)
-                var currentScore = 0
-                currentScore += 100
                 scoreLabel.text = "+100"
-                highScore.text = "Score: \(currentScore)"
                 scoreLabel.textAlignment = .Center
                 gameView.addSubview(scoreLabel)
+                
+                currentScore += 100
                 
                 gravityBehavior.addItem(scoreLabel)
                 
@@ -130,14 +163,17 @@ class ViewController: UIViewController, UICollisionBehaviorDelegate {
                 collisionBehavior.removeItem(balls[0])
                 
                 balls[0].removeFromSuperview()
-                
                 balls.removeAtIndex(0)
                 
-//                UIVIew.animateWithDuration(2.0, animations: { () -> Void in 
+                if livesView.ballsLeft > 0 {
+
+                    livesView.ballsLeft--
+                    
+                    createBall()
+
+  
+                }
                 
-                
-                
-                createBall()
             }
             
         }
