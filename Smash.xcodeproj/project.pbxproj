@@ -13,6 +13,10 @@
 		91069A421B0B6CF600691E85 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91069A411B0B6CF600691E85 /* Images.xcassets */; };
 		91069A451B0B6CF600691E85 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91069A431B0B6CF600691E85 /* LaunchScreen.xib */; };
 		91069A511B0B6CF600691E85 /* SmashTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91069A501B0B6CF600691E85 /* SmashTests.swift */; };
+		91069A5B1B0BBED800691E85 /* BallCountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91069A5A1B0BBED800691E85 /* BallCountView.swift */; };
+		91069A5D1B0BBEE700691E85 /* BallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91069A5C1B0BBEE700691E85 /* BallView.swift */; };
+		91069A5F1B0BBEF800691E85 /* BrickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91069A5E1B0BBEF800691E85 /* BrickView.swift */; };
+		91069A611B0BBF0C00691E85 /* PaddleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91069A601B0BBF0C00691E85 /* PaddleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +40,10 @@
 		91069A4A1B0B6CF600691E85 /* SmashTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmashTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		91069A4F1B0B6CF600691E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91069A501B0B6CF600691E85 /* SmashTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmashTests.swift; sourceTree = "<group>"; };
+		91069A5A1B0BBED800691E85 /* BallCountView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallCountView.swift; sourceTree = "<group>"; };
+		91069A5C1B0BBEE700691E85 /* BallView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BallView.swift; sourceTree = "<group>"; };
+		91069A5E1B0BBEF800691E85 /* BrickView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrickView.swift; sourceTree = "<group>"; };
+		91069A601B0BBF0C00691E85 /* PaddleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +87,11 @@
 			children = (
 				91069A3A1B0B6CF600691E85 /* AppDelegate.swift */,
 				91069A3C1B0B6CF600691E85 /* ViewController.swift */,
+				91069A5A1B0BBED800691E85 /* BallCountView.swift */,
+				91069A5C1B0BBEE700691E85 /* BallView.swift */,
+				91069A5E1B0BBEF800691E85 /* BrickView.swift */,
+				91069A601B0BBF0C00691E85 /* PaddleView.swift */,
 				91069A3E1B0B6CF600691E85 /* Main.storyboard */,
-				91069A411B0B6CF600691E85 /* Images.xcassets */,
-				91069A431B0B6CF600691E85 /* LaunchScreen.xib */,
 				91069A381B0B6CF600691E85 /* Supporting Files */,
 			);
 			path = Smash;
@@ -90,6 +100,8 @@
 		91069A381B0B6CF600691E85 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				91069A411B0B6CF600691E85 /* Images.xcassets */,
+				91069A431B0B6CF600691E85 /* LaunchScreen.xib */,
 				91069A391B0B6CF600691E85 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -213,7 +225,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				91069A3D1B0B6CF600691E85 /* ViewController.swift in Sources */,
+				91069A5B1B0BBED800691E85 /* BallCountView.swift in Sources */,
+				91069A5F1B0BBEF800691E85 /* BrickView.swift in Sources */,
 				91069A3B1B0B6CF600691E85 /* AppDelegate.swift in Sources */,
+				91069A611B0BBF0C00691E85 /* PaddleView.swift in Sources */,
+				91069A5D1B0BBEE700691E85 /* BallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
