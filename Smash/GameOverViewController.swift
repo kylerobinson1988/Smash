@@ -1,5 +1,5 @@
 //
-//  DoneViewController.swift
+//  GameOverView.swift
 //  Smash
 //
 //  Created by Kyle Brooks Robinson on 5/20/15.
@@ -8,35 +8,10 @@
 
 import UIKit
 
-class DoneViewController: UIViewController {
+class GameOverViewController: UIViewController {
 
-    
-    @IBAction func nextLevelButton(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func quitButton(sender: AnyObject) {
-        
-        GameData.mainData().currentLevel = 0
-        GameData.mainData().currentScore = 0
-        GameData.mainData().currentLives = 5
-        
-        
-    }
-    
-    @IBOutlet weak var pointsLabel: UILabel!
-    @IBOutlet weak var ballsLabel: UILabel!
-    
-    var currentScore = GameData.mainData().currentScore
-    var currentLives = GameData.mainData().currentLives
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pointsLabel.text = "Score: \(currentScore)"
-        ballsLabel.text = "Lives: \(currentLives)"
-
 
         // Do any additional setup after loading the view.
     }

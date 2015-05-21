@@ -156,6 +156,20 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                         //level beaten
                         
                         GameData.mainData().currentLevel++
+
+                        // Goes to next level immediately
+//                        if let nextLevelVC = storyboard?.instantiateViewControllerWithIdentifier("LevelVC") as? LevelViewController {
+//                            
+//                            navigationController?.viewControllers = [nextLevelVC]
+//                            
+//                        }
+                        
+                        // Goes to level complete screen
+                        if let endLevelVC = storyboard?.instantiateViewControllerWithIdentifier("endLevelVC") as? DoneViewController {
+                            
+                            navigationController?.viewControllers = [endLevelVC]
+                            
+                        }
                         
                     }
                     
@@ -191,6 +205,17 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                     createBall()
 
   
+                } else if balls.count == 0 {
+                    
+                    // Make currentLevel = 0
+                    // Go to Game Over screen.
+                    GameData.mainData().currentLevel = 0
+                    
+                    if let gameOver = storyboard?.instantiateViewControllerWithIdentifier("GameOverVC") {
+                        navigationController?.viewControllers = [GameOverViewController]
+                    }
+                    
+                    
                 }
                 
             }
