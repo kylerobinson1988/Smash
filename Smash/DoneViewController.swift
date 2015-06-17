@@ -9,7 +9,10 @@
 import UIKit
 
 class DoneViewController: UIViewController {
-
+    
+    var level = GameData.mainData().currentLevel
+    var score = GameData.mainData().currentScore
+    var lives = GameData.mainData().currentLives
     
     @IBAction func nextLevelButton(sender: AnyObject) {
         
@@ -24,18 +27,23 @@ class DoneViewController: UIViewController {
         
     }
     
+    @IBOutlet weak var levelLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var ballsLabel: UILabel!
     
-    var currentScore = GameData.mainData().currentScore
-    var currentLives = GameData.mainData().currentLives
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        pointsLabel.text = "Score: \(currentScore)"
-        ballsLabel.text = "Lives: \(currentLives)"
+        levelLabel.text = "Level \(level) Complete!"
+        pointsLabel.text = "Score: \(score)"
+        ballsLabel.text = "Lives: \(lives)"
+        
+        println(level)
+        println(score)
+        println(lives)
 
 
         // Do any additional setup after loading the view.

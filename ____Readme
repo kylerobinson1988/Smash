@@ -1,0 +1,5 @@
+#Smash
+
+This is a Breakout-style game we created in Swift.  It's our first game, though it's not based in sprite kit.  
+
+This game features multiple levels and bricks that change color/take multiple hits to break.  It also features Welcome, Level Complete, and Game Over screens.  It's also our first taste of continuous data through NSUserDefaults.

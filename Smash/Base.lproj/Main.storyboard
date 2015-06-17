@@ -36,7 +36,7 @@
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="ballsLeft">
-                                                <integer key="value" value="5"/>
+                                                <integer key="value" value="3"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="padding">
                                                 <real key="value" value="2"/>
@@ -109,10 +109,10 @@
             </objects>
             <point key="canvasLocation" x="2760" y="284"/>
         </scene>
-        <!--Game Over View-->
+        <!--Game Over View Controller-->
         <scene sceneID="0EV-xS-nPc">
             <objects>
-                <viewController storyboardIdentifier="GameOverVC" id="00W-gt-tUs" customClass="GameOverView" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameOverVC" id="00W-gt-tUs" customClass="GameOverViewController" customModule="Smash" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kii-2N-3uT"/>
                         <viewControllerLayoutGuide type="bottom" id="68r-4f-PXO"/>
@@ -413,6 +413,7 @@
                     <size key="freeformSize" width="700" height="400"/>
                     <connections>
                         <outlet property="ballsLabel" destination="KgN-fi-ruH" id="wUy-z2-IcM"/>
+                        <outlet property="levelLabel" destination="ly5-UX-kNd" id="zqh-H7-TmK"/>
                         <outlet property="pointsLabel" destination="7hq-nR-b9e" id="IMh-LU-hVZ"/>
                     </connections>
                 </viewController>
@@ -444,7 +445,7 @@
         <image name="adventure_time" width="1296" height="730"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wCL-bN-f9g"/>
-        <segue reference="FrU-kv-Pin"/>
+        <segue reference="nr6-Zb-aUr"/>
+        <segue reference="NJi-tH-1X7"/>
     </inferredMetricsTieBreakers>
 </document>

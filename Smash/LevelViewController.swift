@@ -33,6 +33,13 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                 
                 topScore = currentScore
                 
+                println("game singleton: \(currentScore)")
+                println("game singleton: \(GameData.mainData().currentScore)")
+                
+                GameData.mainData().currentScore = currentScore
+                
+//                var level = GameData.mainData().currentLevel
+//                var score = GameData.mainData().currentScore
             }
             
         }
@@ -138,6 +145,7 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                     gameView.addSubview(scoreLabel)
                     
                     currentScore += brick.points
+                    GameData.mainData().currentScore += brick.points
                     
                     gravityBehavior.addItem(scoreLabel)
                     
@@ -157,13 +165,6 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                         
                         GameData.mainData().currentLevel++
 
-                        // Goes to next level immediately
-//                        if let nextLevelVC = storyboard?.instantiateViewControllerWithIdentifier("LevelVC") as? LevelViewController {
-//                            
-//                            navigationController?.viewControllers = [nextLevelVC]
-//                            
-//                        }
-                        
                         // Goes to level complete screen
                         if let endLevelVC = storyboard?.instantiateViewControllerWithIdentifier("endLevelVC") as? DoneViewController {
                             
@@ -198,24 +199,32 @@ class LevelViewController: UIViewController, UICollisionBehaviorDelegate {
                 balls[0].removeFromSuperview()
                 balls.removeAtIndex(0)
                 
+                
+                
+
+                
                 if livesView.ballsLeft > 0 {
 
                     livesView.ballsLeft--
                     
+                    GameData.mainData().currentLives--
+                    
+                    
                     createBall()
 
   
-                } else if balls.count == 0 {
+                } else {
                     
-                    // Make currentLevel = 0
-                    // Go to Game Over screen.
-                    GameData.mainData().currentLevel = 0
                     
-                    if let gameOver = storyboard?.instantiateViewControllerWithIdentifier("GameOverVC") {
-                        navigationController?.viewControllers = [GameOverViewController]
+//                }balls.count == 0 {
+                    
+                    if let gameOver = storyboard?.instantiateViewControllerWithIdentifier("gameOverVC") as? GameOverViewController {
+                        navigationController?.viewControllers = [gameOver]
                     }
                     
-                    
+                    GameData.mainData().currentLevel = 0
+                    GameData.mainData().currentScore = 0
+
                 }
                 
             }

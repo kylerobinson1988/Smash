@@ -16,7 +16,7 @@ class GameData: NSObject {
     class func mainData() -> GameData { return _data }
     
     var currentLevel = 0
-    var currentLives = 0
+    var currentLives = 5
     var currentScore = 0
     
     var levels: [[[Int]]] = [
